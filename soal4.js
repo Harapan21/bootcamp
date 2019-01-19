@@ -1,10 +1,13 @@
-function ganti_kata(kata, getHuruf, setHuruf) {
-  let temp = kata.split("");
-  temp.map((huruf, i) => {
-    if (huruf === getHuruf) {
-      temp[i] = setHuruf;
+const print_abc = (kolom, baris) => {
+  let abjad = "abcdefghijklmnopqrstuvwxyz".split("");
+  let table = [];
+  for (let i = 0; i < baris; i++) {
+    table.push([]);
+    for (let j = 0; j < kolom; j++) {
+      table[i].push(abjad[j]);
     }
-  });
-  return temp.join("");
-}
-console.log(ganti_kata("kalompok", "a", "e"));
+    abjad.splice(0, kolom);
+  }
+  table.map(huruf => console.log(huruf.join(" ")));
+};
+print_abc(3, 4);

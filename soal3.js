@@ -1,23 +1,26 @@
-function rectangle(param) {
+const draw_kotak = number => {
   let char = [];
-  for (var i = 0; i < param; i++) {
+  for (let i = 0; i < number; i++) {
     char.push([]);
-
-    if (i % 3 == 0) {
-      for (var j = 0; j < param; j++) {
-        char[i].push("*");
-      }
-    } else {
-      for (var j = 0; j < param; j++) {
-        if (j % 3 == 0) {
+    if (i % 2 == 0) {
+      for (let j = 0; j < number; j++) {
+        if (j % 2 == 0) {
           char[i].push("*");
         } else {
           char[i].push(" ");
         }
       }
+    } else {
+      for (let j = 0; j < number; j++) {
+        if (j % 2 == 0) {
+          char[i].push(" ");
+        } else {
+          char[i].push("*");
+        }
+      }
     }
   }
   char.map(print => console.log(print.join(" ")));
-}
+};
 // menggunakan nodejs
-rectangle(7);
+draw_kotak(5);
